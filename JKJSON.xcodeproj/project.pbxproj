@@ -9,7 +9,11 @@
 /* Begin PBXBuildFile section */
 		1D6D95221C2B5BBA009EB312 /* JKJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D6D95211C2B5BBA009EB312 /* JKJSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D6D95291C2B5BBA009EB312 /* JKJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D6D951E1C2B5BBA009EB312 /* JKJSON.framework */; };
-		1D6D952E1C2B5BBA009EB312 /* JKJSONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6D952D1C2B5BBA009EB312 /* JKJSONTests.swift */; };
+		931AD1676683A6B02660C579 /* NSDate+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931ADF75012A4061C28B117E /* NSDate+JSON.swift */; };
+		931AD5A30E810095E452CB09 /* PrimitivesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD6FBE501F2B902234F2F /* PrimitivesTests.swift */; };
+		931AD73B1BA8EC6BE96BF0DB /* JSONProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931ADA56DABA878423235442 /* JSONProtocols.swift */; };
+		931ADC37DBE8547072E02593 /* JSONTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD279063F8CA567960F17 /* JSONTestHelpers.swift */; };
+		931ADE583B3384D624FB38EF /* JSONPrimitives.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931ADEA204D18B8109E88D9E /* JSONPrimitives.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,8 +31,12 @@
 		1D6D95211C2B5BBA009EB312 /* JKJSON.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKJSON.h; sourceTree = "<group>"; };
 		1D6D95231C2B5BBA009EB312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D6D95281C2B5BBA009EB312 /* JKJSONTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JKJSONTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1D6D952D1C2B5BBA009EB312 /* JKJSONTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JKJSONTests.swift; sourceTree = "<group>"; };
 		1D6D952F1C2B5BBA009EB312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		931AD279063F8CA567960F17 /* JSONTestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONTestHelpers.swift; sourceTree = "<group>"; };
+		931AD6FBE501F2B902234F2F /* PrimitivesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimitivesTests.swift; sourceTree = "<group>"; };
+		931ADA56DABA878423235442 /* JSONProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONProtocols.swift; sourceTree = "<group>"; };
+		931ADEA204D18B8109E88D9E /* JSONPrimitives.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONPrimitives.swift; sourceTree = "<group>"; };
+		931ADF75012A4061C28B117E /* NSDate+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+JSON.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +81,9 @@
 			children = (
 				1D6D95211C2B5BBA009EB312 /* JKJSON.h */,
 				1D6D95231C2B5BBA009EB312 /* Info.plist */,
+				931ADA56DABA878423235442 /* JSONProtocols.swift */,
+				931ADEA204D18B8109E88D9E /* JSONPrimitives.swift */,
+				931ADF75012A4061C28B117E /* NSDate+JSON.swift */,
 			);
 			path = JKJSON;
 			sourceTree = "<group>";
@@ -80,8 +91,9 @@
 		1D6D952C1C2B5BBA009EB312 /* JKJSONTests */ = {
 			isa = PBXGroup;
 			children = (
-				1D6D952D1C2B5BBA009EB312 /* JKJSONTests.swift */,
 				1D6D952F1C2B5BBA009EB312 /* Info.plist */,
+				931AD6FBE501F2B902234F2F /* PrimitivesTests.swift */,
+				931AD279063F8CA567960F17 /* JSONTestHelpers.swift */,
 			);
 			path = JKJSONTests;
 			sourceTree = "<group>";
@@ -195,6 +207,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				931AD73B1BA8EC6BE96BF0DB /* JSONProtocols.swift in Sources */,
+				931ADE583B3384D624FB38EF /* JSONPrimitives.swift in Sources */,
+				931AD1676683A6B02660C579 /* NSDate+JSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,7 +217,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D6D952E1C2B5BBA009EB312 /* JKJSONTests.swift in Sources */,
+				931AD5A30E810095E452CB09 /* PrimitivesTests.swift in Sources */,
+				931ADC37DBE8547072E02593 /* JSONTestHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,16 +361,19 @@
 		1D6D95361C2B5BBA009EB312 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = JKJSONTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eu.jkdev.JKJSONTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		1D6D95371C2B5BBA009EB312 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = JKJSONTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eu.jkdev.JKJSONTests;
@@ -381,6 +400,7 @@
 				1D6D95341C2B5BBA009EB312 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1D6D95351C2B5BBA009EB312 /* Build configuration list for PBXNativeTarget "JKJSONTests" */ = {
 			isa = XCConfigurationList;
@@ -389,6 +409,7 @@
 				1D6D95371C2B5BBA009EB312 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
