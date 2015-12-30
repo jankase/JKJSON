@@ -14,16 +14,16 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1D6D951D1C2B5BBA009EB312"
+               BlueprintIdentifier = "1DD35BFC1C33F0A0001D9618"
                BuildableName = "JKJSON.framework"
-               BlueprintName = "JKJSON iOS"
+               BlueprintName = "JKJSON tvOS"
                ReferencedContainer = "container:JKJSON.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
-      buildConfiguration = "Debug iOS"
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
@@ -33,9 +33,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1D6D95271C2B5BBA009EB312"
-               BuildableName = "JKJSONTests.xctest"
-               BlueprintName = "JKJSONTests"
+               BlueprintIdentifier = "1DD35C051C33F0A1001D9618"
+               BuildableName = "JKJSON tvOSTests.xctest"
+               BlueprintName = "JKJSON tvOSTests"
                ReferencedContainer = "container:JKJSON.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -43,9 +43,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D6D951D1C2B5BBA009EB312"
-            BuildableName = "JKJSON.framework"
-            BlueprintName = "JKJSON iOS"
+            BlueprintIdentifier = "1DD35BFC1C33F0A0001D9618"
+            BuildableName = "JKJSON tvOS.framework"
+            BlueprintName = "JKJSON tvOS"
             ReferencedContainer = "container:JKJSON.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -53,7 +53,7 @@
       </AdditionalOptions>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Debug iOS"
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -65,9 +65,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D6D951D1C2B5BBA009EB312"
-            BuildableName = "JKJSON.framework"
-            BlueprintName = "JKJSON iOS"
+            BlueprintIdentifier = "1DD35BFC1C33F0A0001D9618"
+            BuildableName = "JKJSON tvOS.framework"
+            BlueprintName = "JKJSON tvOS"
             ReferencedContainer = "container:JKJSON.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -75,7 +75,7 @@
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
-      buildConfiguration = "Release iOS"
+      buildConfiguration = "Release"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
@@ -83,18 +83,18 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D6D951D1C2B5BBA009EB312"
-            BuildableName = "JKJSON.framework"
-            BlueprintName = "JKJSON iOS"
+            BlueprintIdentifier = "1DD35BFC1C33F0A0001D9618"
+            BuildableName = "JKJSON tvOS.framework"
+            BlueprintName = "JKJSON tvOS"
             ReferencedContainer = "container:JKJSON.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
-      buildConfiguration = "Debug iOS">
+      buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Release iOS"
+      buildConfiguration = "Release"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
