@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1D6D951D1C2B5BBA009EB312"
-               BuildableName = "JKJSON.framework"
-               BlueprintName = "JKJSON"
+               BlueprintIdentifier = "1D6D95411C33DA45009EB312"
+               BuildableName = "JKJSON OSX.framework"
+               BlueprintName = "JKJSON OSX"
                ReferencedContainer = "container:JKJSON.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -26,16 +26,15 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      codeCoverageEnabled = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1D6D95271C2B5BBA009EB312"
-               BuildableName = "JKJSONTests.xctest"
-               BlueprintName = "JKJSONTests"
+               BlueprintIdentifier = "1D6D954A1C33DA45009EB312"
+               BuildableName = "JKJSON MACOSTests.xctest"
+               BlueprintName = "JKJSON MACOSTests"
                ReferencedContainer = "container:JKJSON.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -43,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D6D951D1C2B5BBA009EB312"
-            BuildableName = "JKJSON.framework"
-            BlueprintName = "JKJSON"
+            BlueprintIdentifier = "1D6D95411C33DA45009EB312"
+            BuildableName = "JKJSON OSX.framework"
+            BlueprintName = "JKJSON OSX"
             ReferencedContainer = "container:JKJSON.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -65,9 +64,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D6D951D1C2B5BBA009EB312"
-            BuildableName = "JKJSON.framework"
-            BlueprintName = "JKJSON"
+            BlueprintIdentifier = "1D6D95411C33DA45009EB312"
+            BuildableName = "JKJSON OSX.framework"
+            BlueprintName = "JKJSON OSX"
             ReferencedContainer = "container:JKJSON.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -83,9 +82,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D6D951D1C2B5BBA009EB312"
-            BuildableName = "JKJSON.framework"
-            BlueprintName = "JKJSON"
+            BlueprintIdentifier = "1D6D95411C33DA45009EB312"
+            BuildableName = "JKJSON OSX.framework"
+            BlueprintName = "JKJSON OSX"
             ReferencedContainer = "container:JKJSON.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
