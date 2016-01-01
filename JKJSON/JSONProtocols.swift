@@ -47,11 +47,7 @@ protocol JSONCreatable: JSONStaticCreatable {
 
 /// Creatable Object with default init
 
-protocol JSONPrimitive: JSONPrimitiveImmutable, JSONMutable {
-
-}
-
-protocol JSONPrimitiveImmutable: JSONStaticCreatable, JSONAcceptable {
+protocol JSONPrimitive: JSONStaticCreatable, JSONAcceptable, JSONMutable {
 
 }
 
@@ -60,28 +56,6 @@ extension JSONStaticCreatable {
   static func instancesFromJSON(jsonRepresentation: [JSONRepresentationType]) -> [Self]? {
     let result = jsonRepresentation.map({ return instanceFromJSON($0) }).filter({ $0 != nil }).map({ return $0! })
     return result.count > 0 ? result : nil
-  }
-
-}
-
-extension JSONCreatable {
-
-  static func instanceFromJSON(jsonRepresentation: JSONRepresentationType) -> Self? {
-    return self.init(jsonRepresentation: jsonRepresentation)
-  }
-
-}
-
-extension JSONPrimitiveImmutable {
-
-  var json: Self {
-    get {
-      return self
-    }
-  }
-
-  static func instanceFromJSON(jsonRepresentation: Self) -> Self? {
-    return jsonRepresentation
   }
 
 }
@@ -106,5 +80,5 @@ private func _CopyWhenPossible<T:Any>(any: T) -> T {
   if let obj = any as? NSObject where obj is NSCopying {
     return obj.copy() as! T
   }
-    return any
+  return any
 }

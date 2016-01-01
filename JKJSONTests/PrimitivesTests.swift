@@ -73,6 +73,7 @@ class PrimitiveTestHelper<T:protocol<JSONPrimitive, Equatable> where T.JSONRepre
   override class func defaultTestSuite() -> XCTestSuite {
     let result = XCTestSuite(name: "JSONPrimitive:\(T.self)")
     result.addTest(PrimitiveTestHelper<T>.init(selector: "testCreation"))
+    result.addTest(PrimitiveTestHelper<T>.init(selector: "testMultipleCreation"))
     result.addTest(PrimitiveTestHelper<T>.init(selector: "testEquality"))
     result.addTest(PrimitiveTestHelper<T>.init(selector: "testAssign"))
     return result
@@ -96,13 +97,20 @@ class PrimitiveTestHelper<T:protocol<JSONPrimitive, Equatable> where T.JSONRepre
     }
   }
 
+  func testMultipleCreation() {
+    if let aTestValue = testValue, let aNewValue = newValue {
+      JSONCreateableTests<T>.testCreationFromMultipleJSONRepresentation([aTestValue, aNewValue])
+    } else {
+      XCTFail("Setup for \(T.self) failed")
+    }
+  }
+
   func testEquality() {
     if let aTestObject = testObject {
       JSONCreateableTests<T>.testEqualityForJsonRepresentations(aTestObject)
     } else {
       XCTFail("Setup for \(T.self) failed")
     }
-
   }
 
   func testAssign() {

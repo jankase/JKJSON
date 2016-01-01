@@ -34,7 +34,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1DD35C051C33F0A1001D9618"
-               BuildableName = "JKJSON tvOSTests.xctest"
+               BuildableName = "JKJSONTest.xctest"
                BlueprintName = "JKJSON tvOSTests"
                ReferencedContainer = "container:JKJSON.xcodeproj">
             </BuildableReference>
@@ -44,7 +44,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1DD35BFC1C33F0A0001D9618"
-            BuildableName = "JKJSON tvOS.framework"
+            BuildableName = "JKJSON.framework"
             BlueprintName = "JKJSON tvOS"
             ReferencedContainer = "container:JKJSON.xcodeproj">
          </BuildableReference>
@@ -66,7 +66,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1DD35BFC1C33F0A0001D9618"
-            BuildableName = "JKJSON tvOS.framework"
+            BuildableName = "JKJSON.framework"
             BlueprintName = "JKJSON tvOS"
             ReferencedContainer = "container:JKJSON.xcodeproj">
          </BuildableReference>
@@ -84,7 +84,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1DD35BFC1C33F0A0001D9618"
-            BuildableName = "JKJSON tvOS.framework"
+            BuildableName = "JKJSON.framework"
             BlueprintName = "JKJSON tvOS"
             ReferencedContainer = "container:JKJSON.xcodeproj">
          </BuildableReference>
