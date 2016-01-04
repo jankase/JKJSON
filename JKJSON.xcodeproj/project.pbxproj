@@ -24,14 +24,39 @@
 		1DD35C151C33F103001D9618 /* JSONPrimitives.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931ADEA204D18B8109E88D9E /* JSONPrimitives.swift */; };
 		1DD35C161C33F108001D9618 /* NSDate+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931ADF75012A4061C28B117E /* NSDate+JSON.swift */; };
 		1DD35C171C33F10C001D9618 /* PrimitivesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD6FBE501F2B902234F2F /* PrimitivesTests.swift */; };
+		931AD062F0840F2EA744C43C /* Dictionary+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931ADD2C538D923649E1D613 /* Dictionary+JSON.swift */; };
+		931AD0C41762A7376D62EBF9 /* Array+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD74F7C4D63ABAF9AFB14 /* Array+JSON.swift */; };
+		931AD0DED76FD163E21C1697 /* Dictionary+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931ADD2C538D923649E1D613 /* Dictionary+JSON.swift */; };
 		931AD1676683A6B02660C579 /* NSDate+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931ADF75012A4061C28B117E /* NSDate+JSON.swift */; };
+		931AD173BF5FA78F84E1C952 /* Dictionary+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD6891AD2C3E8AF3D0730 /* Dictionary+Optional.swift */; };
+		931AD1D4F8C0F997277B21DD /* JSONObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD375B8FFCC64D16B51D4 /* JSONObjectTests.swift */; };
+		931AD2B33334BB1B2057C1E0 /* Array+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD74F7C4D63ABAF9AFB14 /* Array+JSON.swift */; };
+		931AD360C894A6CEFCEA40EC /* Dictionary+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD6891AD2C3E8AF3D0730 /* Dictionary+Optional.swift */; };
 		931AD438C18F0DB82882A41C /* JSONDateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD13864B4EE038569EECC /* JSONDateTest.swift */; };
 		931AD5A30E810095E452CB09 /* PrimitivesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD6FBE501F2B902234F2F /* PrimitivesTests.swift */; };
+		931AD6A841371D47FF22C323 /* JSONTestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD65A46B2D85319FA8613 /* JSONTestClass.swift */; };
+		931AD726FA8E9A34F3D2BA42 /* JSONObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD375B8FFCC64D16B51D4 /* JSONObjectTests.swift */; };
 		931AD73B1BA8EC6BE96BF0DB /* JSONProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931ADA56DABA878423235442 /* JSONProtocols.swift */; };
+		931AD81056AB969334C42AD7 /* JSONObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD375B8FFCC64D16B51D4 /* JSONObjectTests.swift */; };
+		931AD9D99D10950ED03D986B /* Array+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD4CB0B3E4024F8518123 /* Array+Optional.swift */; };
 		931ADB0065EE58B52A0852E4 /* JSONDateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD13864B4EE038569EECC /* JSONDateTest.swift */; };
+		931ADBB97B9A95C8845DAB13 /* JSONTestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD65A46B2D85319FA8613 /* JSONTestClass.swift */; };
+		931ADBF9D393FE0520C2BD60 /* JSONArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD8734F5D76E1A6686279 /* JSONArrayTests.swift */; };
+		931ADC1F3A77088E549E41D2 /* Dictionary+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD6891AD2C3E8AF3D0730 /* Dictionary+Optional.swift */; };
 		931ADC37DBE8547072E02593 /* JSONTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD279063F8CA567960F17 /* JSONTestHelpers.swift */; };
+		931ADCD341DD9CD081057638 /* Dictionary+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931ADD2C538D923649E1D613 /* Dictionary+JSON.swift */; };
+		931ADD144D0959087453B68D /* Dictionary+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931ADD2C538D923649E1D613 /* Dictionary+JSON.swift */; };
+		931ADDEBDB61D4BF643AC6D2 /* JSONArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD8734F5D76E1A6686279 /* JSONArrayTests.swift */; };
+		931ADE323860A542CA7B6925 /* Array+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD4CB0B3E4024F8518123 /* Array+Optional.swift */; };
 		931ADE583B3384D624FB38EF /* JSONPrimitives.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931ADEA204D18B8109E88D9E /* JSONPrimitives.swift */; };
+		931ADE6BBB151703078EC3AA /* Array+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD4CB0B3E4024F8518123 /* Array+Optional.swift */; };
+		931ADEC28D8B19705622C6CA /* Array+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD4CB0B3E4024F8518123 /* Array+Optional.swift */; };
+		931ADEC4A4CB5460A9C1612A /* Dictionary+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD6891AD2C3E8AF3D0730 /* Dictionary+Optional.swift */; };
+		931ADF2AB1C51FFA1FF8AA0F /* Array+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD74F7C4D63ABAF9AFB14 /* Array+JSON.swift */; };
 		931ADF5709A51D13B2F9FB10 /* JSONDateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD13864B4EE038569EECC /* JSONDateTest.swift */; };
+		931ADF916DB6A1B792022757 /* Array+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD74F7C4D63ABAF9AFB14 /* Array+JSON.swift */; };
+		931ADFB238DB845B9E8CFD79 /* JSONArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD8734F5D76E1A6686279 /* JSONArrayTests.swift */; };
+		931ADFCCD03EA7818DD8E9F5 /* JSONTestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD65A46B2D85319FA8613 /* JSONTestClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,9 +96,15 @@
 		1DD35C061C33F0A1001D9618 /* JKJSONTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JKJSONTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		931AD13864B4EE038569EECC /* JSONDateTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDateTest.swift; sourceTree = "<group>"; };
 		931AD279063F8CA567960F17 /* JSONTestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONTestHelpers.swift; sourceTree = "<group>"; };
-		931AD6B58488F8BFCCA737A5 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = file.yml; path = .travis.yml; sourceTree = SOURCE_ROOT; };
+		931AD375B8FFCC64D16B51D4 /* JSONObjectTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONObjectTests.swift; sourceTree = "<group>"; };
+		931AD4CB0B3E4024F8518123 /* Array+Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Optional.swift"; sourceTree = "<group>"; };
+		931AD65A46B2D85319FA8613 /* JSONTestClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONTestClass.swift; sourceTree = "<group>"; };
+		931AD6891AD2C3E8AF3D0730 /* Dictionary+Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Optional.swift"; sourceTree = "<group>"; };
 		931AD6FBE501F2B902234F2F /* PrimitivesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimitivesTests.swift; sourceTree = "<group>"; };
+		931AD74F7C4D63ABAF9AFB14 /* Array+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+JSON.swift"; sourceTree = "<group>"; };
+		931AD8734F5D76E1A6686279 /* JSONArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONArrayTests.swift; sourceTree = "<group>"; };
 		931ADA56DABA878423235442 /* JSONProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONProtocols.swift; sourceTree = "<group>"; };
+		931ADD2C538D923649E1D613 /* Dictionary+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+JSON.swift"; sourceTree = "<group>"; };
 		931ADEA204D18B8109E88D9E /* JSONPrimitives.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONPrimitives.swift; sourceTree = "<group>"; };
 		931ADF75012A4061C28B117E /* NSDate+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+JSON.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,12 +191,15 @@
 		1D6D95201C2B5BBA009EB312 /* JKJSON */ = {
 			isa = PBXGroup;
 			children = (
-				1D6D95211C2B5BBA009EB312 /* JKJSON.h */,
+				931AD74F7C4D63ABAF9AFB14 /* Array+JSON.swift */,
+				931AD4CB0B3E4024F8518123 /* Array+Optional.swift */,
+				931ADD2C538D923649E1D613 /* Dictionary+JSON.swift */,
+				931AD6891AD2C3E8AF3D0730 /* Dictionary+Optional.swift */,
 				1D6D95231C2B5BBA009EB312 /* Info.plist */,
-				931ADA56DABA878423235442 /* JSONProtocols.swift */,
+				1D6D95211C2B5BBA009EB312 /* JKJSON.h */,
 				931ADEA204D18B8109E88D9E /* JSONPrimitives.swift */,
+				931ADA56DABA878423235442 /* JSONProtocols.swift */,
 				931ADF75012A4061C28B117E /* NSDate+JSON.swift */,
-				931AD6B58488F8BFCCA737A5 /* .travis.yml */,
 			);
 			path = JKJSON;
 			sourceTree = "<group>";
@@ -174,9 +208,12 @@
 			isa = PBXGroup;
 			children = (
 				1D6D952F1C2B5BBA009EB312 /* Info.plist */,
-				931AD6FBE501F2B902234F2F /* PrimitivesTests.swift */,
-				931AD279063F8CA567960F17 /* JSONTestHelpers.swift */,
+				931AD8734F5D76E1A6686279 /* JSONArrayTests.swift */,
 				931AD13864B4EE038569EECC /* JSONDateTest.swift */,
+				931AD279063F8CA567960F17 /* JSONTestHelpers.swift */,
+				931AD6FBE501F2B902234F2F /* PrimitivesTests.swift */,
+				931AD65A46B2D85319FA8613 /* JSONTestClass.swift */,
+				931AD375B8FFCC64D16B51D4 /* JSONObjectTests.swift */,
 			);
 			path = JKJSONTests;
 			sourceTree = "<group>";
@@ -459,6 +496,10 @@
 				931AD73B1BA8EC6BE96BF0DB /* JSONProtocols.swift in Sources */,
 				931ADE583B3384D624FB38EF /* JSONPrimitives.swift in Sources */,
 				931AD1676683A6B02660C579 /* NSDate+JSON.swift in Sources */,
+				931ADF916DB6A1B792022757 /* Array+JSON.swift in Sources */,
+				931ADEC28D8B19705622C6CA /* Array+Optional.swift in Sources */,
+				931AD062F0840F2EA744C43C /* Dictionary+JSON.swift in Sources */,
+				931AD173BF5FA78F84E1C952 /* Dictionary+Optional.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,6 +510,9 @@
 				931AD5A30E810095E452CB09 /* PrimitivesTests.swift in Sources */,
 				931ADC37DBE8547072E02593 /* JSONTestHelpers.swift in Sources */,
 				931AD438C18F0DB82882A41C /* JSONDateTest.swift in Sources */,
+				931ADBF9D393FE0520C2BD60 /* JSONArrayTests.swift in Sources */,
+				931ADFCCD03EA7818DD8E9F5 /* JSONTestClass.swift in Sources */,
+				931AD726FA8E9A34F3D2BA42 /* JSONObjectTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +523,10 @@
 				1D6D95591C33DB0A009EB312 /* JSONProtocols.swift in Sources */,
 				1D6D955B1C33DB13009EB312 /* NSDate+JSON.swift in Sources */,
 				1D6D955A1C33DB0F009EB312 /* JSONPrimitives.swift in Sources */,
+				931AD0C41762A7376D62EBF9 /* Array+JSON.swift in Sources */,
+				931AD9D99D10950ED03D986B /* Array+Optional.swift in Sources */,
+				931AD0DED76FD163E21C1697 /* Dictionary+JSON.swift in Sources */,
+				931AD360C894A6CEFCEA40EC /* Dictionary+Optional.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +537,9 @@
 				1D6D955C1C33DB1C009EB312 /* PrimitivesTests.swift in Sources */,
 				1DD35BE61C33DC63001D9618 /* JSONTestHelpers.swift in Sources */,
 				931ADB0065EE58B52A0852E4 /* JSONDateTest.swift in Sources */,
+				931ADDEBDB61D4BF643AC6D2 /* JSONArrayTests.swift in Sources */,
+				931ADBB97B9A95C8845DAB13 /* JSONTestClass.swift in Sources */,
+				931AD81056AB969334C42AD7 /* JSONObjectTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,6 +550,10 @@
 				1DD35BF51C33EFD4001D9618 /* JSONProtocols.swift in Sources */,
 				1DD35BF71C33EFDD001D9618 /* NSDate+JSON.swift in Sources */,
 				1DD35BF61C33EFD8001D9618 /* JSONPrimitives.swift in Sources */,
+				931AD2B33334BB1B2057C1E0 /* Array+JSON.swift in Sources */,
+				931ADE6BBB151703078EC3AA /* Array+Optional.swift in Sources */,
+				931ADCD341DD9CD081057638 /* Dictionary+JSON.swift in Sources */,
+				931ADC1F3A77088E549E41D2 /* Dictionary+Optional.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,6 +564,10 @@
 				1DD35C141C33F0FF001D9618 /* JSONProtocols.swift in Sources */,
 				1DD35C161C33F108001D9618 /* NSDate+JSON.swift in Sources */,
 				1DD35C151C33F103001D9618 /* JSONPrimitives.swift in Sources */,
+				931ADF2AB1C51FFA1FF8AA0F /* Array+JSON.swift in Sources */,
+				931ADE323860A542CA7B6925 /* Array+Optional.swift in Sources */,
+				931ADD144D0959087453B68D /* Dictionary+JSON.swift in Sources */,
+				931ADEC4A4CB5460A9C1612A /* Dictionary+Optional.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,6 +578,9 @@
 				1DD35C171C33F10C001D9618 /* PrimitivesTests.swift in Sources */,
 				1D56266C1C33F1DC0014EBB4 /* JSONTestHelpers.swift in Sources */,
 				931ADF5709A51D13B2F9FB10 /* JSONDateTest.swift in Sources */,
+				931ADFB238DB845B9E8CFD79 /* JSONArrayTests.swift in Sources */,
+				931AD6A841371D47FF22C323 /* JSONTestClass.swift in Sources */,
+				931AD1D4F8C0F997277B21DD /* JSONObjectTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

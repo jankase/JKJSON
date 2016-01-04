@@ -5,9 +5,15 @@
 
 import Foundation
 
+protocol _JSON {
+
+  var acceptableJSON: JSONAcceptable { get }
+
+}
+
 /// class which can produce JSON acceptable content
 
-protocol JSON {
+protocol JSON: _JSON, JSONAcceptable {
 
   typealias JSONRepresentationType: JSONAcceptable
 
@@ -54,8 +60,16 @@ protocol JSONPrimitive: JSONStaticCreatable, JSONAcceptable, JSONMutable {
 extension JSONStaticCreatable {
 
   static func instancesFromJSON(jsonRepresentation: [JSONRepresentationType]) -> [Self]? {
-    let result = jsonRepresentation.map({ return instanceFromJSON($0) }).filter({ $0 != nil }).map({ return $0! })
+    let result = jsonRepresentation.flatMap({ return instanceFromJSON($0) })
     return result.count > 0 ? result : nil
+  }
+
+}
+
+extension JSON {
+
+  var acceptableJSON: JSONAcceptable {
+    return json
   }
 
 }
@@ -77,8 +91,10 @@ extension JSONPrimitive {
 }
 
 private func _CopyWhenPossible<T:Any>(any: T) -> T {
+
   if let obj = any as? NSObject where obj is NSCopying {
     return obj.copy() as! T
   }
   return any
+
 }
