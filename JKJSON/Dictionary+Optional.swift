@@ -7,7 +7,7 @@ import Foundation
 
 extension Dictionary {
 
-  mutating func optionalObject(theObject: Value?, forKey theKey: Key) {
+  mutating func setOptionalObject(theObject: Value?, forKey theKey: Key) {
     if let aObject = theObject {
       self[theKey] = aObject
     }
@@ -17,7 +17,7 @@ extension Dictionary {
 
 extension Optional where Wrapped: DictionaryLiteralConvertible, Wrapped.Key: Hashable {
 
-  mutating func setObject(theObject: Wrapped.Value?, forKey theKey: Wrapped.Key) {
+  mutating func setOptionalObject(theObject: Wrapped.Value?, forKey theKey: Wrapped.Key) {
     if let aObject = theObject {
       if self == nil {
         self = [:]

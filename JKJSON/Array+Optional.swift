@@ -7,13 +7,19 @@ import Foundation
 
 extension Array {
 
-  mutating func setOptionalObject(theObject: Element?, index theIndex: Index) {
+  mutating func setOptionalObject(theObject: Element?, index theIndex: Index) throws {
     if let aObject = theObject {
-      self[theIndex] = aObject
+      if theIndex < self.endIndex {
+        self[theIndex] = aObject
+      } else if theIndex == self.endIndex {
+        self.append(aObject)
+      } else {
+        throw JSONErrors.ArrayOutOfBounds
+      }
     }
   }
 
-  mutating func appedOptional(theObject: Element?) {
+  mutating func appendOptional(theObject: Element?) {
     if let aObject = theObject {
       self.append(aObject)
     }
@@ -23,16 +29,24 @@ extension Array {
 
 extension Optional where Wrapped: protocol<RangeReplaceableCollectionType, MutableCollectionType> {
 
-  mutating func setOptionalObject(theObject: Wrapped.Generator.Element?, index theIndex: Int) {
+  mutating func setOptionalObject(theObject: Wrapped.Generator.Element?, index theIndex: Int) throws {
 
     if let aObject = theObject {
 
-      if self == nil {
+      if self == nil && theIndex == 0 {
         self = Wrapped()
+      } else {
+        throw JSONErrors.ArrayOutOfBounds
       }
 
       if var anArray = self as? Array<Wrapped.Generator.Element> {
-        anArray[theIndex] = aObject
+        if anArray.endIndex > theIndex {
+          anArray[theIndex] = aObject
+        } else if anArray.endIndex == theIndex {
+          anArray.appendOptional(aObject)
+        } else {
+          throw JSONErrors.ArrayOutOfBounds
+        }
         if let aWrapped = anArray as? Wrapped {
           self = aWrapped
         }
