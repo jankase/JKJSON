@@ -5,9 +5,9 @@
 
 import Foundation
 
-extension Dictionary {
+public extension Dictionary {
 
-  mutating func setOptionalObject(theObject: Value?, forKey theKey: Key) {
+  public mutating func setOptionalObject(theObject: Value?, forKey theKey: Key) {
     if let aObject = theObject {
       self[theKey] = aObject
     }
@@ -15,9 +15,9 @@ extension Dictionary {
 
 }
 
-extension Optional where Wrapped: DictionaryLiteralConvertible, Wrapped.Key: Hashable {
+public extension Optional where Wrapped: DictionaryLiteralConvertible, Wrapped.Key: Hashable {
 
-  mutating func setOptionalObject(theObject: Wrapped.Value?, forKey theKey: Wrapped.Key) {
+  public mutating func setOptionalObject(theObject: Wrapped.Value?, forKey theKey: Wrapped.Key) {
     if let aObject = theObject {
       if self == nil {
         self = [:]

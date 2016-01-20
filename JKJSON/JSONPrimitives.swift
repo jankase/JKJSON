@@ -7,7 +7,7 @@ import Foundation
 
 extension String: JSONPrimitive {
 
-  static func instanceFromJSONString(theJsonString: String) -> String? {
+  public static func instanceFromJSONString(theJsonString: String) -> String? {
     return String(theJsonString)
   }
 
@@ -15,7 +15,7 @@ extension String: JSONPrimitive {
 
 extension Int: JSONPrimitive {
 
-  static func instanceFromJSONString(theJsonString: String) -> Int? {
+  public static func instanceFromJSONString(theJsonString: String) -> Int? {
     return Int(theJsonString)
   }
 
@@ -23,7 +23,7 @@ extension Int: JSONPrimitive {
 
 extension Int64: JSONPrimitive {
 
-  static func instanceFromJSONString(theJsonString: String) -> Int64? {
+  public static func instanceFromJSONString(theJsonString: String) -> Int64? {
     return Int64(theJsonString)
   }
 
@@ -31,7 +31,7 @@ extension Int64: JSONPrimitive {
 
 extension Int32: JSONPrimitive {
 
-  static func instanceFromJSONString(theJsonString: String) -> Int32? {
+  public static func instanceFromJSONString(theJsonString: String) -> Int32? {
     return Int32(theJsonString)
   }
 
@@ -39,7 +39,7 @@ extension Int32: JSONPrimitive {
 
 extension Int16: JSONPrimitive {
 
-  static func instanceFromJSONString(theJsonString: String) -> Int16? {
+  public static func instanceFromJSONString(theJsonString: String) -> Int16? {
     return Int16(theJsonString)
   }
 
@@ -47,7 +47,7 @@ extension Int16: JSONPrimitive {
 
 extension Int8: JSONPrimitive {
 
-  static func instanceFromJSONString(theJsonString: String) -> Int8? {
+  public static func instanceFromJSONString(theJsonString: String) -> Int8? {
     return Int8(theJsonString)
   }
 
@@ -55,7 +55,7 @@ extension Int8: JSONPrimitive {
 
 extension Bit: JSONPrimitive {
 
-  static func instanceFromJSONString(theJsonString: String) -> Bit? {
+  public static func instanceFromJSONString(theJsonString: String) -> Bit? {
     if let anIntValue = Int(theJsonString) {
       return Bit(rawValue: anIntValue)
     }
@@ -66,7 +66,7 @@ extension Bit: JSONPrimitive {
 
 extension UInt: JSONPrimitive {
 
-  static func instanceFromJSONString(theJsonString: String) -> UInt? {
+  public static func instanceFromJSONString(theJsonString: String) -> UInt? {
     return UInt(theJsonString)
   }
 
@@ -74,7 +74,7 @@ extension UInt: JSONPrimitive {
 
 extension UInt64: JSONPrimitive {
 
-  static func instanceFromJSONString(theJsonString: String) -> UInt64? {
+  public static func instanceFromJSONString(theJsonString: String) -> UInt64? {
     return UInt64(theJsonString)
   }
 
@@ -82,7 +82,7 @@ extension UInt64: JSONPrimitive {
 
 extension UInt32: JSONPrimitive {
 
-  static func instanceFromJSONString(theJsonString: String) -> UInt32? {
+  public static func instanceFromJSONString(theJsonString: String) -> UInt32? {
     return UInt32(theJsonString)
   }
 
@@ -90,7 +90,7 @@ extension UInt32: JSONPrimitive {
 
 extension UInt16: JSONPrimitive {
 
-  static func instanceFromJSONString(theJsonString: String) -> UInt16? {
+  public static func instanceFromJSONString(theJsonString: String) -> UInt16? {
     return UInt16(theJsonString)
   }
 
@@ -98,7 +98,7 @@ extension UInt16: JSONPrimitive {
 
 extension UInt8: JSONPrimitive {
 
-  static func instanceFromJSONString(theJsonString: String) -> UInt8? {
+  public static func instanceFromJSONString(theJsonString: String) -> UInt8? {
     return UInt8(theJsonString)
   }
 
@@ -106,7 +106,7 @@ extension UInt8: JSONPrimitive {
 
 extension Double: JSONPrimitive {
 
-  static func instanceFromJSONString(theJsonString: String) -> Double? {
+  public static func instanceFromJSONString(theJsonString: String) -> Double? {
     return Double(theJsonString)
   }
 
@@ -114,7 +114,7 @@ extension Double: JSONPrimitive {
 
 extension Float: JSONPrimitive {
 
-  static func instanceFromJSONString(theJsonString: String) -> Float? {
+  public static func instanceFromJSONString(theJsonString: String) -> Float? {
     return Float(theJsonString)
   }
 

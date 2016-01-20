@@ -5,7 +5,7 @@
 
 import Foundation
 
-protocol _JSON {
+public protocol _JSON {
 
   var acceptableJSON: JSONAcceptable { get }
 
@@ -13,23 +13,24 @@ protocol _JSON {
 
 /// class which can produce JSON acceptable content
 
-protocol JSON: _JSON, JSONAcceptable {
+public protocol JSON: _JSON, JSONAcceptable {
 
   typealias JSONRepresentationType: JSONAcceptable
 
   var json: JSONRepresentationType { get }
+
 }
 
 /// Object conforming to this protocol represents valid JSON content
 
-protocol JSONAcceptable {
+public protocol JSONAcceptable {
 }
 
 /// Object which can be be transformed to JSON
 
 /// Object which can be modified by JSON
 
-protocol JSONMutable: JSON {
+public protocol JSONMutable: JSON {
 
   var json: JSONRepresentationType { get set }
 
@@ -37,7 +38,7 @@ protocol JSONMutable: JSON {
 
 /// Can be created from JSON (used by extensions)
 
-protocol JSONStaticCreatable: JSON {
+public protocol JSONStaticCreatable: JSON {
 
   static func instanceFromJSON(jsonRepresentation: JSONRepresentationType) -> Self?
 
@@ -45,19 +46,19 @@ protocol JSONStaticCreatable: JSON {
 
 /// Creatable from JSON
 
-protocol JSONCreatable: JSONStaticCreatable {
+public protocol JSONCreatable: JSONStaticCreatable {
 
   init?(jsonRepresentation: JSONRepresentationType)
 
 }
 
-protocol JSONStringStaticCreatable: JSONStaticCreatable {
+public protocol JSONStringStaticCreatable: JSONStaticCreatable {
 
   static func instanceFromJSONString(theJsonString: String) -> Self?
 
 }
 
-protocol JSONStringCreatable: JSONStringStaticCreatable, JSONCreatable {
+public protocol JSONStringCreatable: JSONStringStaticCreatable, JSONCreatable {
 
   init?(jsonString theJsonString: String)
 
@@ -65,30 +66,30 @@ protocol JSONStringCreatable: JSONStringStaticCreatable, JSONCreatable {
 
 /// Creatable Object with default init
 
-protocol JSONPrimitive: JSONStringStaticCreatable, JSONAcceptable, JSONMutable {
+public protocol JSONPrimitive: JSONStringStaticCreatable, JSONAcceptable, JSONMutable {
 
 }
 
-extension JSONStaticCreatable {
+public extension JSONStaticCreatable {
 
-  static func instancesFromJSON(jsonRepresentation: [JSONRepresentationType]) -> [Self]? {
+  public static func instancesFromJSON(jsonRepresentation: [JSONRepresentationType]) -> [Self]? {
     let result = jsonRepresentation.flatMap({ return instanceFromJSON($0) })
     return result.count > 0 ? result : nil
   }
 
 }
 
-extension JSON {
+public extension JSON {
 
-  var acceptableJSON: JSONAcceptable {
+  public var acceptableJSON: JSONAcceptable {
     return json
   }
 
 }
 
-extension JSONPrimitive {
+public extension JSONPrimitive {
 
-  var json: Self {
+  public var json: Self {
     get {
       return _CopyWhenPossible(self)
     }
@@ -97,9 +98,10 @@ extension JSONPrimitive {
     }
   }
 
-  static func instanceFromJSON(jsonRepresentation: Self) -> Self? {
+  public static func instanceFromJSON(jsonRepresentation: Self) -> Self? {
     return _CopyWhenPossible(jsonRepresentation)
   }
+
 }
 
 private func _CopyWhenPossible<T:Any>(any: T) -> T {

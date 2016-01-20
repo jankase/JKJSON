@@ -5,6 +5,6 @@
 
 import Foundation
 
-enum JSONErrors: ErrorType {
+public enum JSONErrors: ErrorType {
   case ArrayOutOfBounds
 }

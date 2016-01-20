@@ -7,7 +7,7 @@ import Foundation
 
 extension Dictionary: JSONAcceptable, JSON {
 
-  var json: [String:JSONAcceptable] {
+  public var json: [String:JSONAcceptable] {
     var aResult = [:] as [String:JSONAcceptable]
     contentLoop: for (key, value) in self {
       var aResultKey: String
@@ -29,14 +29,24 @@ extension Dictionary: JSONAcceptable, JSON {
     return aResult
   }
 
-  func optionalObjectForKey<T:JSONStaticCreatable>(theKey: Key, ofType theType: T.Type, defaultValue theDefault: T? = nil) -> T? {
+  public func optionalObjectForKey<T:JSONStaticCreatable>(theKey: Key,
+                                                          ofType theType: T.Type,
+                                                          defaultValue theDefault: T? = nil) -> T? {
     if let aValue = self[theKey] as? T.JSONRepresentationType {
       return T.instanceFromJSON(aValue) ?? theDefault
     }
     return theDefault
   }
 
-  func updateObject<T:JSONMutable>(theValue: T, fromKey theKey: Key) -> T {
+  public func objectForKey<T:JSONStaticCreatable>(theKey: Key,
+                                                  ofType theType: T.Type,
+                                                  defaultValue theDefault: T) -> T {
+
+    return optionalObjectForKey(theKey, ofType: theType, defaultValue: theDefault) ?? theDefault
+
+  }
+
+  public func updateObject<T:JSONMutable>(theValue: T, fromKey theKey: Key) -> T {
     if let aStoredValue = self[theKey] as? T.JSONRepresentationType {
       var aValue = theValue
       aValue.json = aStoredValue

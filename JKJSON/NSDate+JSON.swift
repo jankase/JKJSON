@@ -7,13 +7,15 @@ import Foundation
 
 extension NSDate: JSON {
 
-  var json: String {
+  public var json: String {
     return JSONDate.JSONDefaultDateFormatter.stringFromDate(self)
   }
 
 }
 
 public class JSONDate: NSDate, JSONStringCreatable {
+
+  //MARK: - Properties
 
   public static let defaultDate: NSDate = NSDate.distantPast()
 
@@ -42,6 +44,8 @@ public class JSONDate: NSDate, JSONStringCreatable {
     return JSONDate.self
   }
 
+  //MARK: - Object life cycle
+
   public override init(timeIntervalSinceReferenceDate theInterval: NSTimeInterval) {
     _realDate = JSONDate._referenceDate.dateByAddingTimeInterval(theInterval)
     super.init()
@@ -68,6 +72,20 @@ public class JSONDate: NSDate, JSONStringCreatable {
     self.init(date: JSONDate.defaultDate)
   }
 
+  public convenience required init?(jsonString theJsonString: String) {
+    self.init(jsonRepresentation: theJsonString)
+  }
+
+  public static func instanceFromJSON(theJson: String) -> Self? {
+    return self.init(jsonRepresentation: theJson)
+  }
+
+  public class func instanceFromJSONString(theJsonString: String) -> Self? {
+    return self.init(jsonString: theJsonString)
+  }
+
+  //MARK: - NSCoding support
+
   public required init?(coder theDecoder: NSCoder) {
     _realDate = JSONDate.defaultDate
     super.init(coder: theDecoder)
@@ -78,22 +96,12 @@ public class JSONDate: NSDate, JSONStringCreatable {
     }
   }
 
-  public convenience required init?(jsonString theJsonString: String) {
-    self.init(jsonRepresentation: theJsonString)
-  }
-
   override public func encodeWithCoder(theCoder: NSCoder) {
     super.encodeWithCoder(theCoder)
     theCoder.encodeObject(_realDate, forKey: __EncodeKeys.RealDateKey)
   }
 
-  public static func instanceFromJSON(theJson: String) -> Self? {
-    return self.init(jsonRepresentation: theJson)
-  }
-
-  class func instanceFromJSONString(theJsonString: String) -> Self? {
-    return self.init(jsonString: theJsonString)
-  }
+  //MARK: - Private stuff
 
   private var _realDate: NSDate
 

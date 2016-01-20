@@ -7,7 +7,7 @@ import Foundation
 
 extension Array: JSON, JSONAcceptable {
 
-  var json: [JSONAcceptable] {
+  public var json: [JSONAcceptable] {
     var aResult = [] as [JSONAcceptable]
     for anElement in self {
       switch anElement {
@@ -21,14 +21,14 @@ extension Array: JSON, JSONAcceptable {
     return aResult
   }
 
-  func objectAtIndex<T:JSONStaticCreatable>(theIndex: Int, withType theType: T.Type, defaultValue theDefaultValue: T? = nil) -> T? {
+  public func objectAtIndex<T:JSONStaticCreatable>(theIndex: Int, withType theType: T.Type, defaultValue theDefaultValue: T? = nil) -> T? {
     if let aJson = self[theIndex] as? T.JSONRepresentationType {
       return T.instanceFromJSON(aJson) ?? theDefaultValue
     }
     return theDefaultValue
   }
 
-  func updateObjectValue<T:JSONMutable>(theValue: T, fromIndex theIndex: Int) -> T {
+  public func updateObjectValue<T:JSONMutable>(theValue: T, fromIndex theIndex: Int) -> T {
     if let aJson = self[theIndex] as? T.JSONRepresentationType {
       var aResult = theValue
       aResult.json = aJson
