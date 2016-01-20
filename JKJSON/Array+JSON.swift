@@ -21,11 +21,19 @@ extension Array: JSON, JSONAcceptable {
     return aResult
   }
 
-  public func objectAtIndex<T:JSONStaticCreatable>(theIndex: Int, withType theType: T.Type, defaultValue theDefaultValue: T? = nil) -> T? {
+  public func optionalObjectAtIndex<T:JSONStaticCreatable>(theIndex: Int,
+                                                           withType theType: T.Type,
+                                                           defaultValue theDefaultValue: T? = nil) -> T? {
     if let aJson = self[theIndex] as? T.JSONRepresentationType {
       return T.instanceFromJSON(aJson) ?? theDefaultValue
     }
     return theDefaultValue
+  }
+
+  public func objectAtIndex<T:JSONStaticCreatable>(theIndex: Int,
+                                                   withType theType: T.Type,
+                                                   defaultValue theDefaultValue: T) -> T {
+    return optionalObjectAtIndex(theIndex, withType: theType, defaultValue: theDefaultValue) ?? theDefaultValue
   }
 
   public func updateObjectValue<T:JSONMutable>(theValue: T, fromIndex theIndex: Int) -> T {

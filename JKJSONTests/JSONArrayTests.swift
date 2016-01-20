@@ -24,15 +24,15 @@ class JSONArrayTests: XCTestCase {
   }
 
   func testPrimitiveFromArray() {
-    XCTAssertEqual("Test", jsonArray.objectAtIndex(0, withType: String.self, defaultValue: nil), "Fail retrieve string")
-    XCTAssertEqual(0, jsonArray.objectAtIndex(1, withType: Int.self), "Fail retrieve int")
-    XCTAssertNil(jsonArray.objectAtIndex(0, withType: Int.self), "Retrieved int even source is string")
-    XCTAssertNil(jsonArray.objectAtIndex(1, withType: String.self), "Retrieved String even when source is Int")
+    XCTAssertEqual("Test", jsonArray.optionalObjectAtIndex(0, withType: String.self, defaultValue: nil), "Fail retrieve string")
+    XCTAssertEqual(0, jsonArray.optionalObjectAtIndex(1, withType: Int.self), "Fail retrieve int")
+    XCTAssertNil(jsonArray.optionalObjectAtIndex(0, withType: Int.self), "Retrieved int even source is string")
+    XCTAssertNil(jsonArray.optionalObjectAtIndex(1, withType: String.self), "Retrieved String even when source is Int")
   }
 
   func testObjectFromArray() {
-    XCTAssertEqual(jsonArray.objectAtIndex(2, withType: JSONMock.self)?.testInt, 10, "Retrieved object not identical test int value")
-    XCTAssertEqual(jsonArray.objectAtIndex(2, withType: JSONMock.self)?.testString, "TestJSON", "Retrieved object not identical test string value")
+    XCTAssertEqual(jsonArray.optionalObjectAtIndex(2, withType: JSONMock.self)?.testInt, 10, "Retrieved object not identical test int value")
+    XCTAssertEqual(jsonArray.optionalObjectAtIndex(2, withType: JSONMock.self)?.testString, "TestJSON", "Retrieved object not identical test string value")
   }
 
   func testUpdateObjectFromArray() {
