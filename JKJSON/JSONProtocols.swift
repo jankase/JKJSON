@@ -51,9 +51,21 @@ protocol JSONCreatable: JSONStaticCreatable {
 
 }
 
+protocol JSONStringStaticCreatable: JSONStaticCreatable {
+
+  static func instanceFromJSONString(theJsonString: String) -> Self?
+
+}
+
+protocol JSONStringCreatable: JSONStringStaticCreatable, JSONCreatable {
+
+  init?(jsonString theJsonString: String)
+
+}
+
 /// Creatable Object with default init
 
-protocol JSONPrimitive: JSONStaticCreatable, JSONAcceptable, JSONMutable {
+protocol JSONPrimitive: JSONStringStaticCreatable, JSONAcceptable, JSONMutable {
 
 }
 

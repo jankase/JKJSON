@@ -13,25 +13,26 @@ private enum __ValueType: UInt {
   case Initial = 0, NewValue
 }
 
-private func __valueFor(type theType: __ValueType) -> [String:Any] {
-  let numeric = theType == .Initial ? 0 : 1
-  let string  = theType == .Initial ? "JSON" : "New JSON"
-  var result  = [:] as [String:Any]
-  result["Int"] = Int(numeric)
-  result["Int64"] = Int64(numeric)
-  result["Int32"] = Int32(numeric)
-  result["Int16"] = Int16(numeric)
-  result["Int8"] = Int8(numeric)
-  result["UInt"] = UInt(numeric)
-  result["UInt64"] = UInt64(numeric)
-  result["UInt32"] = UInt32(numeric)
-  result["UInt16"] = UInt16(numeric)
-  result["UInt8"] = UInt8(numeric)
-  result["Bit"] = theType == .Initial ? Bit.Zero : Bit.One
-  result["String"] = string
-  result["Float"] = Float(numeric)
-  result["Double"] = Double(numeric)
-  return result
+private func __valueFor(type theType: __ValueType) -> [String:(Any, String)] {
+  let aNumeric       = theType == .Initial ? 0 : 1
+  let aNumericString = theType == .Initial ? "0" : "1"
+  let aString        = theType == .Initial ? "JSON" : "New JSON"
+  var aResult        = [:] as [String:(Any, String)]
+  aResult["Int"] = (Int(aNumeric), aNumericString)
+  aResult["Int64"] = (Int64(aNumeric), aNumericString)
+  aResult["Int32"] = (Int32(aNumeric), aNumericString)
+  aResult["Int16"] = (Int16(aNumeric), aNumericString)
+  aResult["Int8"] = (Int8(aNumeric), aNumericString)
+  aResult["UInt"] = (UInt(aNumeric), aNumericString)
+  aResult["UInt64"] = (UInt64(aNumeric), aNumericString)
+  aResult["UInt32"] = (UInt32(aNumeric), aNumericString)
+  aResult["UInt16"] = (UInt16(aNumeric), aNumericString)
+  aResult["UInt8"] = (UInt8(aNumeric), aNumericString)
+  aResult["Bit"] = (theType == .Initial ? Bit.Zero : Bit.One, aNumericString)
+  aResult["String"] = (aString, aString)
+  aResult["Float"] = (Float(aNumeric), aNumericString)
+  aResult["Double"] = (Double(aNumeric), aNumericString)
+  return aResult
 }
 
 private let __json      = __valueFor(type: .Initial)
@@ -62,9 +63,10 @@ class PrimitiveTest: XCTestCase {
 
 class PrimitiveTestHelper<T:protocol<JSONPrimitive, Equatable> where T.JSONRepresentationType == T>: XCTestCase {
 
-  var testObject: T?
-  var testValue:  T.JSONRepresentationType?
-  var newValue:   T.JSONRepresentationType?
+  var testObject:           T?
+  var testValue:            T.JSONRepresentationType?
+  var newValue:             T.JSONRepresentationType?
+  var stringRepresentation: String?
 
   override var name: String {
     return "\(T.self)"
@@ -76,6 +78,8 @@ class PrimitiveTestHelper<T:protocol<JSONPrimitive, Equatable> where T.JSONRepre
     result.addTest(PrimitiveTestHelper<T>.init(selector: "testMultipleCreation"))
     result.addTest(PrimitiveTestHelper<T>.init(selector: "testEquality"))
     result.addTest(PrimitiveTestHelper<T>.init(selector: "testAssign"))
+    result.addTest(PrimitiveTestHelper<T>.init(selector: "testStringCreation"))
+    result.addTest(PrimitiveTestHelper<T>.init(selector: "testStringCreationFailure"))
     return result
   }
 
@@ -84,9 +88,10 @@ class PrimitiveTestHelper<T:protocol<JSONPrimitive, Equatable> where T.JSONRepre
   }
 
   override func setUp() {
-    testObject = __json["\(T.self)"] as? T
-    testValue = __json["\(T.self)"] as? T.JSONRepresentationType
-    newValue = __newValues["\(T.self)"] as? T.JSONRepresentationType
+    testObject = __json["\(T.self)"]?.0 as? T
+    testValue = __json["\(T.self)"]?.0 as? T.JSONRepresentationType
+    newValue = __newValues["\(T.self)"]?.0 as? T.JSONRepresentationType
+    stringRepresentation = __json["\(T.self)"]?.1
   }
 
   func testCreation() {
@@ -94,6 +99,21 @@ class PrimitiveTestHelper<T:protocol<JSONPrimitive, Equatable> where T.JSONRepre
       JSONCreateableTests<T>.testCreationFromJSONRepresentation(aTestValue)
     } else {
       XCTFail("Setup for \(T.self) failed")
+    }
+  }
+  
+  func testStringCreation() {
+    if let aTestValue = stringRepresentation {
+      JSONCreateableTests<T>.testCreationFromString("\(aTestValue)")
+    } else {
+      XCTFail("Setup for \(T.self) failed")
+    }
+  }
+
+  func testStringCreationFailure() {
+    if let _ = testObject as? String {
+    } else {
+      JSONCreateableTests<T>.testCreationFromString("abc", theFailExpected: true)
     }
   }
 

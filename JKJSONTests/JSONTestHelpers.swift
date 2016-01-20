@@ -36,6 +36,19 @@ struct JSONCreateableTests<T:JSONStaticCreatable> {
 
 }
 
+extension JSONCreateableTests where T: JSONStringStaticCreatable {
+
+  static func testCreationFromString(theStringRepresentation: String, theFailExpected: Bool = false) {
+    let aMappedObject = T.instanceFromJSONString(theStringRepresentation)
+    if theFailExpected {
+      XCTAssertNil(aMappedObject, "Mapped object created even fail expected")
+    } else {
+      XCTAssertNotNil(aMappedObject, "Mapped object not created")
+    }
+  }
+
+}
+
 struct JSONMutableTests<T:protocol<JSONMutable, JSONStaticCreatable> where T.JSONRepresentationType: Equatable> {
 
   static func testAssignForJSONRepresentedObject(theJsonObject: T, newValue theNewValue: T.JSONRepresentationType) {

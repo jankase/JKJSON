@@ -26,6 +26,10 @@ class JSONDateTest: XCTestCase {
     JSONCreateableTests<T>.testCreationFromJSONRepresentation(jsonDateString)
   }
 
+  func testStringCreation() {
+    JSONCreateableTests<T>.testCreationFromString(jsonDateString)
+  }
+
   func testBadCreation() {
     let aMappedObject = JSONDate.instanceFromJSON("XX")
     XCTAssertNil(aMappedObject, "Date created even from bad input")
@@ -54,8 +58,8 @@ class JSONDateTest: XCTestCase {
     anArchiver.finishEncoding()
 
     let aDataForReading = aData.copy() as! NSData
-    let anUnarchiver = NSKeyedUnarchiver(forReadingWithData: aDataForReading)
-    let aObject = anUnarchiver.decodeObjectForKey("date")
+    let anUnarchiver    = NSKeyedUnarchiver(forReadingWithData: aDataForReading)
+    let aObject         = anUnarchiver.decodeObjectForKey("date")
     if let aJsonDate = aObject as? JSONDate {
       XCTAssertEqual(aJsonDate, JSONDateTest.__jsonDate, "Unarchived object does not match source object")
     } else {
@@ -72,7 +76,7 @@ class JSONDateTest: XCTestCase {
     return JSONDate(date: __date)
   }()
 
-  private static let __date : NSDate = {
+  private static let __date: NSDate = {
     let dc = NSDateComponents()
     dc.month = 12
     dc.year = 2015

@@ -13,15 +13,15 @@ extension NSDate: JSON {
 
 }
 
-public class JSONDate: NSDate, JSONCreatable {
+public class JSONDate: NSDate, JSONStringCreatable {
 
   public static let defaultDate: NSDate = NSDate.distantPast()
 
   public static let JSONDefaultDateFormatter: NSDateFormatter = {
-    var result = NSDateFormatter()
-    result.locale = NSLocale(localeIdentifier: "en_US_POSIX")
-    result.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
-    return result
+    var aResult = NSDateFormatter()
+    aResult.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+    aResult.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+    return aResult
   }()
 
   public lazy var jsonDateFormatter: NSDateFormatter = JSONDefaultDateFormatter
@@ -38,30 +38,30 @@ public class JSONDate: NSDate, JSONCreatable {
     return json
   }
 
-  public override var classForCoder : AnyClass {
+  public override var classForCoder: AnyClass {
     return JSONDate.self
   }
 
-  public override init(timeIntervalSinceReferenceDate: NSTimeInterval) {
-    _realDate = JSONDate._referenceDate.dateByAddingTimeInterval(timeIntervalSinceReferenceDate)
+  public override init(timeIntervalSinceReferenceDate theInterval: NSTimeInterval) {
+    _realDate = JSONDate._referenceDate.dateByAddingTimeInterval(theInterval)
     super.init()
   }
 
-  public convenience init?(jsonRepresentation theJsonRepresentation: String, dateFormatter theDateFormatter: NSDateFormatter) {
-    if let newDate = theDateFormatter.dateFromString(theJsonRepresentation) {
-      self.init(timeIntervalSinceReferenceDate: newDate.timeIntervalSinceDate(JSONDate._referenceDate))
+  public convenience init?(jsonRepresentation theJson: String, dateFormatter theDateFormatter: NSDateFormatter) {
+    if let aNewDate = theDateFormatter.dateFromString(theJson) {
+      self.init(timeIntervalSinceReferenceDate: aNewDate.timeIntervalSinceDate(JSONDate._referenceDate))
     } else {
       self.init()
       return nil
     }
   }
 
-  public required convenience init?(jsonRepresentation: String) {
-    self.init(jsonRepresentation: jsonRepresentation, dateFormatter: JSONDate.JSONDefaultDateFormatter)
+  public required convenience init?(jsonRepresentation theJson: String) {
+    self.init(jsonRepresentation: theJson, dateFormatter: JSONDate.JSONDefaultDateFormatter)
   }
 
-  public convenience init(date: NSDate) {
-    self.init(timeIntervalSinceReferenceDate: date.timeIntervalSinceReferenceDate)
+  public convenience init(date theDate: NSDate) {
+    self.init(timeIntervalSinceReferenceDate: theDate.timeIntervalSinceReferenceDate)
   }
 
   public override convenience init() {
@@ -69,13 +69,17 @@ public class JSONDate: NSDate, JSONCreatable {
   }
 
   public required init?(coder theDecoder: NSCoder) {
-    self._realDate = JSONDate.defaultDate
+    _realDate = JSONDate.defaultDate
     super.init(coder: theDecoder)
-    if let date = theDecoder.decodeObjectForKey(__EncodeKeys.RealDateKey) as? NSDate {
-      _realDate = date
+    if let aDate = theDecoder.decodeObjectForKey(__EncodeKeys.RealDateKey) as? NSDate {
+      _realDate = aDate
     } else {
       return nil
     }
+  }
+
+  public convenience required init?(jsonString theJsonString: String) {
+    self.init(jsonRepresentation: theJsonString)
   }
 
   override public func encodeWithCoder(theCoder: NSCoder) {
@@ -83,24 +87,27 @@ public class JSONDate: NSDate, JSONCreatable {
     theCoder.encodeObject(_realDate, forKey: __EncodeKeys.RealDateKey)
   }
 
+  public static func instanceFromJSON(theJson: String) -> Self? {
+    return self.init(jsonRepresentation: theJson)
+  }
 
-  public static func instanceFromJSON(jsonRepresentation: String) -> Self? {
-    return self.init(jsonRepresentation: jsonRepresentation)
+  class func instanceFromJSONString(theJsonString: String) -> Self? {
+    return self.init(jsonString: theJsonString)
   }
 
   private var _realDate: NSDate
 
   private static let _referenceDate: NSDate = {
-    let dc = NSDateComponents()
-    dc.year = 2001
-    dc.month = 1
-    dc.day = 1
-    dc.hour = 0
-    dc.minute = 0
-    dc.second = 0
-    dc.timeZone = NSTimeZone(forSecondsFromGMT: 0)
-    let cal = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
-    return cal.dateFromComponents(dc)!
+    let aReferenceDateComponents = NSDateComponents()
+    aReferenceDateComponents.year = 2001
+    aReferenceDateComponents.month = 1
+    aReferenceDateComponents.day = 1
+    aReferenceDateComponents.hour = 0
+    aReferenceDateComponents.minute = 0
+    aReferenceDateComponents.second = 0
+    aReferenceDateComponents.timeZone = NSTimeZone(forSecondsFromGMT: 0)
+    let aGregorianCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+    return aGregorianCalendar.dateFromComponents(aReferenceDateComponents)!
   }()
 
   private struct __EncodeKeys {
