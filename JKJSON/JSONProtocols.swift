@@ -26,8 +26,6 @@ public protocol JSON: _JSON, JSONAcceptable {
 public protocol JSONAcceptable {
 }
 
-/// Object which can be be transformed to JSON
-
 /// Object which can be modified by JSON
 
 public protocol JSONMutable: JSON {

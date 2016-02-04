@@ -56,3 +56,37 @@ extension Dictionary: JSONAcceptable, JSON {
   }
 
 }
+
+extension Dictionary where Key: StringLiteralConvertible, Value: Any {
+
+  var objcJson: [String:AnyObject]? {
+    get {
+      var aResult = [:] as [String:AnyObject]
+      let json    = self.json
+      for (aKey, aValue) in json {
+        if let aResultValue = aValue as? AnyObject {
+          aResult[String(aKey)] = aResultValue
+        }
+      }
+      if aResult.count > 0 {
+        return aResult
+      } else {
+        return nil
+      }
+    }
+    set(theNewValue) {
+      guard let theNewValue = theNewValue else {
+        self = [:]
+        return
+      }
+      var aNewSelf = [:] as [Key:Value]
+      for (aKey, aValue) in theNewValue {
+        if let aNewKey = aKey as? Key, let aNewValue = aValue as? Value {
+          aNewSelf[aNewKey] = aNewValue
+        }
+      }
+      self = aNewSelf
+    }
+  }
+
+}

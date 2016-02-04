@@ -59,6 +59,10 @@ extension JSONMock: CustomStringConvertible, CustomDebugStringConvertible {
 
 }
 
+struct NonJsonStruct {
+  var internalInt: Int
+}
+
 func ==(lhs: JSONMock, rhs: JSONMock) -> Bool {
   return lhs.testInt == rhs.testInt && lhs.testString == rhs.testString
 }

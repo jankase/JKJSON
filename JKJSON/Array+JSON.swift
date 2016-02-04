@@ -6,7 +6,7 @@
 import Foundation
 
 extension Array: JSON, JSONAcceptable {
-
+  
   public var json: [JSONAcceptable] {
     var aResult = [] as [JSONAcceptable]
     for anElement in self {
@@ -20,7 +20,7 @@ extension Array: JSON, JSONAcceptable {
     }
     return aResult
   }
-
+  
   public func optionalObjectAtIndex<T:JSONStaticCreatable>(theIndex: Int,
                                                            withType theType: T.Type,
                                                            defaultValue theDefaultValue: T? = nil) -> T? {
@@ -29,13 +29,13 @@ extension Array: JSON, JSONAcceptable {
     }
     return theDefaultValue
   }
-
+  
   public func objectAtIndex<T:JSONStaticCreatable>(theIndex: Int,
                                                    withType theType: T.Type,
                                                    defaultValue theDefaultValue: T) -> T {
     return optionalObjectAtIndex(theIndex, withType: theType, defaultValue: theDefaultValue) ?? theDefaultValue
   }
-
+  
   public func updateObjectValue<T:JSONMutable>(theValue: T, fromIndex theIndex: Int) -> T {
     if let aJson = self[theIndex] as? T.JSONRepresentationType {
       var aResult = theValue
@@ -44,5 +44,5 @@ extension Array: JSON, JSONAcceptable {
     }
     return theValue
   }
-
+  
 }

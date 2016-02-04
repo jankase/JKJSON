@@ -15,6 +15,10 @@
 		1D6D955A1C33DB0F009EB312 /* JSONPrimitives.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931ADEA204D18B8109E88D9E /* JSONPrimitives.swift */; };
 		1D6D955B1C33DB13009EB312 /* NSDate+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931ADF75012A4061C28B117E /* NSDate+JSON.swift */; };
 		1D6D955C1C33DB1C009EB312 /* PrimitivesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD6FBE501F2B902234F2F /* PrimitivesTests.swift */; };
+		1DCEAA001C52B44300B6A332 /* JSONObjcPrimitives.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCEA9FF1C52B44300B6A332 /* JSONObjcPrimitives.swift */; };
+		1DCEAA011C52B44300B6A332 /* JSONObjcPrimitives.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCEA9FF1C52B44300B6A332 /* JSONObjcPrimitives.swift */; };
+		1DCEAA021C52B44300B6A332 /* JSONObjcPrimitives.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCEA9FF1C52B44300B6A332 /* JSONObjcPrimitives.swift */; };
+		1DCEAA031C52B44300B6A332 /* JSONObjcPrimitives.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCEA9FF1C52B44300B6A332 /* JSONObjcPrimitives.swift */; };
 		1DD35BE61C33DC63001D9618 /* JSONTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD279063F8CA567960F17 /* JSONTestHelpers.swift */; };
 		1DD35BF51C33EFD4001D9618 /* JSONProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931ADA56DABA878423235442 /* JSONProtocols.swift */; };
 		1DD35BF61C33EFD8001D9618 /* JSONPrimitives.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931ADEA204D18B8109E88D9E /* JSONPrimitives.swift */; };
@@ -104,6 +108,7 @@
 		1D6D952F1C2B5BBA009EB312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D6D95421C33DA45009EB312 /* JKJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JKJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D6D954B1C33DA45009EB312 /* JKJSON MACOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "JKJSON MACOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DCEA9FF1C52B44300B6A332 /* JSONObjcPrimitives.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONObjcPrimitives.swift; sourceTree = "<group>"; };
 		1DD35BED1C33EEFE001D9618 /* JKJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JKJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DD35BFD1C33F0A0001D9618 /* JKJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JKJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DD35C061C33F0A1001D9618 /* JKJSONTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JKJSONTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -214,10 +219,11 @@
 				931AD6891AD2C3E8AF3D0730 /* Dictionary+Optional.swift */,
 				1D6D95231C2B5BBA009EB312 /* Info.plist */,
 				1D6D95211C2B5BBA009EB312 /* JKJSON.h */,
+				931ADE5FD73B93C3224BC35D /* JSONErrors.swift */,
+				1DCEA9FF1C52B44300B6A332 /* JSONObjcPrimitives.swift */,
 				931ADEA204D18B8109E88D9E /* JSONPrimitives.swift */,
 				931ADA56DABA878423235442 /* JSONProtocols.swift */,
 				931ADF75012A4061C28B117E /* NSDate+JSON.swift */,
-				931ADE5FD73B93C3224BC35D /* JSONErrors.swift */,
 			);
 			path = JKJSON;
 			sourceTree = "<group>";
@@ -516,6 +522,7 @@
 			files = (
 				931AD73B1BA8EC6BE96BF0DB /* JSONProtocols.swift in Sources */,
 				931ADE583B3384D624FB38EF /* JSONPrimitives.swift in Sources */,
+				1DCEAA001C52B44300B6A332 /* JSONObjcPrimitives.swift in Sources */,
 				931AD1676683A6B02660C579 /* NSDate+JSON.swift in Sources */,
 				931ADF916DB6A1B792022757 /* Array+JSON.swift in Sources */,
 				931ADEC28D8B19705622C6CA /* Array+Optional.swift in Sources */,
@@ -547,6 +554,7 @@
 			files = (
 				1D6D95591C33DB0A009EB312 /* JSONProtocols.swift in Sources */,
 				1D6D955B1C33DB13009EB312 /* NSDate+JSON.swift in Sources */,
+				1DCEAA011C52B44300B6A332 /* JSONObjcPrimitives.swift in Sources */,
 				1D6D955A1C33DB0F009EB312 /* JSONPrimitives.swift in Sources */,
 				931AD0C41762A7376D62EBF9 /* Array+JSON.swift in Sources */,
 				931AD9D99D10950ED03D986B /* Array+Optional.swift in Sources */,
@@ -578,6 +586,7 @@
 			files = (
 				1DD35BF51C33EFD4001D9618 /* JSONProtocols.swift in Sources */,
 				1DD35BF71C33EFDD001D9618 /* NSDate+JSON.swift in Sources */,
+				1DCEAA021C52B44300B6A332 /* JSONObjcPrimitives.swift in Sources */,
 				1DD35BF61C33EFD8001D9618 /* JSONPrimitives.swift in Sources */,
 				931AD2B33334BB1B2057C1E0 /* Array+JSON.swift in Sources */,
 				931ADE6BBB151703078EC3AA /* Array+Optional.swift in Sources */,
@@ -593,6 +602,7 @@
 			files = (
 				1DD35C141C33F0FF001D9618 /* JSONProtocols.swift in Sources */,
 				1DD35C161C33F108001D9618 /* NSDate+JSON.swift in Sources */,
+				1DCEAA031C52B44300B6A332 /* JSONObjcPrimitives.swift in Sources */,
 				1DD35C151C33F103001D9618 /* JSONPrimitives.swift in Sources */,
 				931ADF2AB1C51FFA1FF8AA0F /* Array+JSON.swift in Sources */,
 				931ADE323860A542CA7B6925 /* Array+Optional.swift in Sources */,
