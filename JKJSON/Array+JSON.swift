@@ -20,6 +20,21 @@ extension Array: JSON, JSONAcceptable {
     }
     return aResult
   }
+
+  public var objcJson: [AnyObject]? {
+    var aResult = [] as [AnyObject]
+    for anElement in json {
+      if let anObject = anElement as? AnyObject {
+        aResult.append(anObject)
+      } else if let aDictionary = anElement as? [String:JSONAcceptable] {
+        aResult.appendOptional(aDictionary.objcJson)
+      }
+    }
+    if aResult.count == 0 {
+      return nil
+    }
+    return aResult
+  }
   
   public func optionalObjectAtIndex<T:JSONStaticCreatable>(theIndex: Int,
                                                            withType theType: T.Type,

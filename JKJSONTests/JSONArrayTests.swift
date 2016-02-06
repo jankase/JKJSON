@@ -54,4 +54,10 @@ class JSONArrayTests: XCTestCase {
     XCTAssertEqual(obj2.testInt, 0, "Created test int failed from JSON")
   }
 
+  func testObjcJson() {
+    let anObjcJson = objectArray.objcJson
+    XCTAssertNotNil(anObjcJson, "Exected json object")
+    XCTAssertEqual(anObjcJson?.count, objectArray.count, "Not all object transfered to ObjC")
+  }
+
 }
